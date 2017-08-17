@@ -52,3 +52,4 @@ C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\Cogniti
 C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.g.resources
 C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.Properties.Resources.resources
 C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.csproj.GenerateResource.Cache
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\GeneratedInternalTypeHelper.g.cs

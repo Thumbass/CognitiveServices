@@ -46,7 +46,7 @@ namespace CognitiveServicesDemo1.ViewModel
         public MainViewModel()
         {
             StatusText = "Status: Waiting for image...";
-            _faceServiceClient = new FaceServiceClient("14a1c14af14f4cd39f52a108eb3ee014");
+            _faceServiceClient = new FaceServiceClient("cdd29de6f80542869e57d226520bdb96");
             BrowseButtonCommand = new DelegateCommand(Browse);
             DetectFaceCommand = new DelegateCommand(DetectFace, CanDetectFace);
         }
@@ -63,7 +63,7 @@ namespace CognitiveServicesDemo1.ViewModel
             image.CacheOption = BitmapCacheOption.None;
             image.UriSource = fileUri;
             ImageSource = image;
-            StatusText = "Status; Image load...";
+            StatusText = "Status: Image load...";
         }
         private bool CanDetectFace(object obj)
         {
