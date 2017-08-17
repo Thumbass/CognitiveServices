@@ -18,11 +18,16 @@ namespace CognitiveServicesDemo1.View
     /// <summary>
     /// Interaction logic for MainView.xaml
     /// </summary>
-    public partial class MainView : Page
+    public partial class MainView : Window
     {
         public MainView()
         {
             InitializeComponent();
+        }
+
+        private void BrowseButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

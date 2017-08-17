@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:CognitiveServicesDemo1.View"
       mc:Ignorable="d" 
       Title="Congnitive Services Demo"
-      Height="300" Width="300">
+      Height="600" Width="600">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Image x:Name="FaceImage" Stretch="Uniform" Source="{Binding ImageSource}" Grid.Row="0" />
         <TextBlock x:Name="StatusTextBlock" Text="{Binding StatusText}" Grid.Row="1" />
-        <Button x:Name="BrowseButton" Content="Browse" Height="20" Width="140" HorizontalAlignment="Left" Command="{Binding BrowseButtonCommand}" Margin="5, 0, 0, 5" Grid.Row="2" />
+        <Button x:Name="BrowseButton" Content="Browse" Height="20" Width="140" HorizontalAlignment="Left" Command="{Binding BrowseButtonCommand}" Margin="5, 0, 0, 5" Grid.Row="2" Click="BrowseButton_Click" />
         <Button x:Name="DetectFaceButton" Content="Detect Face" Height="20" Width="140" HorizontalAlignment="Right" Command="{Binding DetectFaceCommand}" Margin="5, 0, 5, 5" Grid.Row="2" />
     </Grid>
     
