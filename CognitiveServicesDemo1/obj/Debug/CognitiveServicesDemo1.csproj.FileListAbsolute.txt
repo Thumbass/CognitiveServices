@@ -1,0 +1,39 @@
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\CognitiveServicesDemo1.exe.config
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\CognitiveServicesDemo1.exe
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\CognitiveServicesDemo1.pdb
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\View\MainView.g.cs
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\App.g.cs
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1_MarkupCompile.cache
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1_MarkupCompile.lref
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\View\MainView.baml
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.g.resources
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.Properties.Resources.resources
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.csproj.GenerateResource.Cache
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.exe
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.pdb
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.csproj.App.config
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\Microsoft.ProjectOxford.Common.dll
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\Microsoft.ProjectOxford.Face.dll
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\CognitiveServicesDemo1\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Kyle\Documents\Visual Studio 2017\Projects\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.csproj.App.config
+C:\Users\Kyle\Documents\Visual Studio 2017\Projects\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Documents\Visual Studio 2017\Projects\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\View\MainView.g.cs
+C:\Users\Kyle\Documents\Visual Studio 2017\Projects\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\App.g.cs
+C:\Users\Kyle\Documents\Visual Studio 2017\Projects\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1_MarkupCompile.cache
+C:\Users\Kyle\Documents\Visual Studio 2017\Projects\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1_MarkupCompile.lref
+C:\Users\Kyle\Documents\Visual Studio 2017\Projects\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.exe
+C:\Users\Kyle\Documents\Visual Studio 2017\Projects\CognitiveServicesDemo1\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.pdb
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.csproj.App.config
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.csprojResolveAssemblyReference.cache
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\View\MainView.g.cs
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\App.g.cs
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1_MarkupCompile.cache
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1_MarkupCompile.lref
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.exe
+C:\Users\Kyle\Documents\GitHub\CognitiveServicesDemo1\Cognitive-Services\CognitiveServicesDemo1\obj\Debug\CognitiveServicesDemo1.pdb
