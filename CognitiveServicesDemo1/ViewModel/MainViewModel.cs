@@ -46,7 +46,7 @@ namespace CognitiveServicesDemo1.ViewModel
         public MainViewModel()
         {
             StatusText = "Status: Waiting for image...";
-            _faceServiceClient = new FaceServiceClient("cdd29de6f80542869e57d226520bdb96");
+            _faceServiceClient = new FaceServiceClient("cdd29de6f80542869e57d226520bdb96", "https://westcentralus.api.cognitive.microsoft.com/face/v1.0");
             BrowseButtonCommand = new DelegateCommand(Browse);
             DetectFaceCommand = new DelegateCommand(DetectFace, CanDetectFace);
         }
