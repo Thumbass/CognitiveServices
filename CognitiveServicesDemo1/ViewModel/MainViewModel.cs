@@ -63,7 +63,7 @@ namespace CognitiveServicesDemo1.ViewModel
             image.CacheOption = BitmapCacheOption.None;
             image.UriSource = fileUri;
             ImageSource = image;
-            StatusText = "Status: Image load...";
+            StatusText = "Status: Image loaded...";
         }
         private bool CanDetectFace(object obj)
         {
@@ -83,11 +83,13 @@ namespace CognitiveServicesDemo1.ViewModel
         private async Task<FaceRectangle[]> UploadAndDetectFacesAsync()
         {
             StatusText = "Status: Detecting faces...";
-
+            
             try
             {
                 using (Stream imageFileStream = File.OpenRead(_filePath))
                 {
+
+                    
                     Face[] faces = await _faceServiceClient.DetectAsync(imageFileStream, true, true, new List<FaceAttributeType>() { FaceAttributeType.Age });
                     List<double> ages = faces.Select(face => face.FaceAttributes.Age).ToList();
                     FaceRectangle[] faceRects = faces.Select(face => face.FaceRectangle).ToArray();
@@ -100,12 +102,13 @@ namespace CognitiveServicesDemo1.ViewModel
                 }
                 
             }
-            catch (System.IndexOutOfRangeException e)  
+            catch (Exception ex)
             {
-                System.Console.WriteLine(e.Message);
-                // Set IndexOutOfRangeException to the new exception's InnerException.
-                throw new System.ArgumentOutOfRangeException("index parameter is out of range.", e);
+                StatusText = $"Status: Failed to detect faces - {ex.Message}";
+
+                return new FaceRectangle[0];
             }
+
 
         }
     }
