@@ -1,4 +1,5 @@
 ﻿using CognitiveServicesDemo1.Interface;
+using CognitiveServicesDemo1.Model;
 using Microsoft.ProjectOxford.Face;
 using Microsoft.ProjectOxford.Face.Contract;
 using System;
@@ -6,7 +7,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
@@ -15,6 +18,7 @@ namespace CognitiveServicesDemo1.ViewModel
 {
     class MainViewModel : ObservableObject
     {
+        private TextToSpeak _textToSpeak;
         private string _filePath;
         private IFaceServiceClient _faceServiceClient;
 
@@ -49,6 +53,23 @@ namespace CognitiveServicesDemo1.ViewModel
             _faceServiceClient = new FaceServiceClient("cdd29de6f80542869e57d226520bdb96", "https://westcentralus.api.cognitive.microsoft.com/face/v1.0");
             BrowseButtonCommand = new DelegateCommand(Browse);
             DetectFaceCommand = new DelegateCommand(DetectFace, CanDetectFace);
+
+            _textToSpeak = new TextToSpeak();
+            _textToSpeak.OnAudioAvailable += _textToSpeak_OnAudioAvailable;
+            _textToSpeak.OnError += _textToSpeak_OnError;
+
+            if (_textToSpeak.GenerateAuthenticationToken("CognitiveServicesDemo1", "3036c868000a48e2a991c0dadb9f2dd6"))
+                _textToSpeak.GenerateHeaders();
+        }
+        private void _textToSpeak_OnError(object sender, AudioErrorEventArgs e)
+        {
+            StatusText = $"Status: Audio service failed -  {e.ErrorMessage}";
+        }
+        private void _textToSpeak_OnAudioAvailable(object sender, AudioEventArgs e)
+        {
+            SoundPlayer player = new SoundPlayer(e.EventData);
+            player.Play();
+            e.EventData.Dispose();
         }
         private void Browse(object obj)
         {
@@ -79,6 +100,7 @@ namespace CognitiveServicesDemo1.ViewModel
                 textToSpeak = $"{faceRects.Length} faces detected";
 
             Debug.WriteLine(textToSpeak);
+            await _textToSpeak.SpeakAsync(textToSpeak, CancellationToken.None);
         }
         private async Task<FaceRectangle[]> UploadAndDetectFacesAsync()
         {
@@ -88,8 +110,6 @@ namespace CognitiveServicesDemo1.ViewModel
             {
                 using (Stream imageFileStream = File.OpenRead(_filePath))
                 {
-
-                    
                     Face[] faces = await _faceServiceClient.DetectAsync(imageFileStream, true, true, new List<FaceAttributeType>() { FaceAttributeType.Age });
                     List<double> ages = faces.Select(face => face.FaceAttributes.Age).ToList();
                     FaceRectangle[] faceRects = faces.Select(face => face.FaceRectangle).ToArray();
@@ -98,7 +118,7 @@ namespace CognitiveServicesDemo1.ViewModel
                     {
                         Console.WriteLine(age);
                     }
-                return faceRects;
+                    return faceRects;
                 }
                 
             }
