@@ -34,7 +34,7 @@ namespace CognitiveServicesDemo1.Model
             _requestDetails = string.Format("grant_type=client_credentials&client_id={0}&client_secret={1}&scope={2}",
                                           HttpUtility.UrlEncode(clientId),
                                           HttpUtility.UrlEncode(clientSecret),
-                                          HttpUtility.UrlEncode("https://api.cognitive.microsoft.com/sts/v1.0"));
+                                          HttpUtility.UrlEncode("https://api.cognitive.microsoft.com/sts/v1.0/issueToken"));
 
             _token = GetToken();
 
@@ -71,8 +71,8 @@ namespace CognitiveServicesDemo1.Model
         /// <returns>Returns the <see cref="AccessTokenInfo"/> token if call is successful, null otherwise </returns>
         private AccessTokenInfo GetToken()
         {
-            WebRequest webRequest = WebRequest.Create("https://api.cognitive.microsoft.com/sts/v1.0");
-            webRequest.ContentType = "/application/x-www-form-urlencoded";
+            WebRequest webRequest = WebRequest.Create("https://speech.platform.bing.com/synthesize");
+            webRequest.ContentType = "application/ssml+xml";
             webRequest.Method = "POST";
 
             byte[] bytes = Encoding.ASCII.GetBytes(_requestDetails);

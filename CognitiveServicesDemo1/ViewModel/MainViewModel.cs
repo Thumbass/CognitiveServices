@@ -11,7 +11,9 @@ using System.Media;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace CognitiveServicesDemo1.ViewModel
@@ -22,9 +24,9 @@ namespace CognitiveServicesDemo1.ViewModel
         private string _filePath;
         private IFaceServiceClient _faceServiceClient;
 
-        private BitmapImage _imageSource;
+        private BitmapSource _imageSource;
 
-        public BitmapImage ImageSource
+        public BitmapSource ImageSource
         {
             get { return _imageSource; }
             set
@@ -58,7 +60,7 @@ namespace CognitiveServicesDemo1.ViewModel
             _textToSpeak.OnAudioAvailable += _textToSpeak_OnAudioAvailable;
             _textToSpeak.OnError += _textToSpeak_OnError;
 
-            if (_textToSpeak.GenerateAuthenticationToken("CognitiveServicesDemo1", "3036c868000a48e2a991c0dadb9f2dd6"))
+            if (_textToSpeak.GenerateAuthenticationToken("Ocp-Apim-Subscription-Key", "5e083ee53e41416fbeff5cf8011b644f"))
                 _textToSpeak.GenerateHeaders();
         }
         private void _textToSpeak_OnError(object sender, AudioErrorEventArgs e)
@@ -88,13 +90,49 @@ namespace CognitiveServicesDemo1.ViewModel
         }
         private bool CanDetectFace(object obj)
         {
-            return !string.IsNullOrEmpty(ImageSource?.UriSource.ToString());
+            return !string.IsNullOrEmpty(ImageSource?.ToString());
         }
         private async void DetectFace(object obj)
         {
             FaceRectangle[] faceRects = await UploadAndDetectFacesAsync();
             string textToSpeak = "No Faces detected";
-            if (faceRects.Length == 1)
+            if (faceRects.Length >= 1)
+            {
+                DrawingVisual visual = new DrawingVisual();
+                DrawingContext drawingContext = visual.RenderOpen();
+                drawingContext.DrawImage(ImageSource,
+                new Rect(0, 0, ImageSource.Width, ImageSource.Height));
+                double dpi = ImageSource.DpiX;
+                double resizeFactor = 96 / dpi;
+                foreach (var faceRect in faceRects)
+                {
+                    drawingContext.DrawRectangle(
+                    Brushes.Transparent,
+                    new Pen(Brushes.Green, 2),
+                    new Rect(
+                    faceRect.Left * resizeFactor,
+                    faceRect.Top * resizeFactor,
+                    faceRect.Width * resizeFactor,
+                    faceRect.Height * resizeFactor
+                    )
+                    );
+                }
+                drawingContext.Close();
+                RenderTargetBitmap faceWithRectBitmap = new RenderTargetBitmap(
+                (int)(ImageSource.PixelWidth * resizeFactor),
+                (int)(ImageSource.PixelHeight * resizeFactor),
+                96,
+                96,
+                PixelFormats.Pbgra32);
+                faceWithRectBitmap.Render(visual);
+                ImageSource = faceWithRectBitmap;
+                //faceWithRectBitmap;
+                if (faceRects.Length == 1)
+                    textToSpeak = "1 face detected";
+                else if (faceRects.Length > 1)
+                    textToSpeak = $"{faceRects.Length} faces detected";
+            }
+                if (faceRects.Length == 1)
                 textToSpeak = "1 face detected";
             else if (faceRects.Length > 1)
                 textToSpeak = $"{faceRects.Length} faces detected";
